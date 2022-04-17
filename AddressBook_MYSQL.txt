@@ -174,4 +174,45 @@ mysql> SELECT * FROM Persons;
 +----------+----------+-----------+----------+---------+-------------+---------------------+--------+
 5 rows in set (0.01 sec)
 
+/**************************************************************************************************
+UC8 : Ability to retrieve entries sorted alphabetically by Person’s name for a given city
+**************************************************************************************************/
+
+mysql> SELECT * FROM Persons ORDER BY FirstName;
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address  | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+|        2 | Khurana  | Ayushman  | Bandra   | Mumbai  |  9856244512 | ayushmankhuran      | 410001 |
+|        2 | Khurana  | Karan     | Bandra   | Mumbai  |  9856244512 | Karankhuran         | 410001 |
+|        1 | Mujawar  | Samarth   | Nandre   | Nandre  |  7775827779 | nilofarm9           | 431202 |
+|        1 | Pawar    | Shubham   | Akluj    | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
+|        1 | Pawar    | Vishal    | Badnapur | Jalna   |  7775827779 | vishal19            | 431202 |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Persons WHERE City = 'Mumbai';
++----------+----------+-----------+---------+--------+-------------+----------------+--------+
+| PersonID | LastName | FirstName | Address | City   | PhoneNumber | email          | zip    |
++----------+----------+-----------+---------+--------+-------------+----------------+--------+
+|        2 | Khurana  | Ayushman  | Bandra  | Mumbai |  9856244512 | ayushmankhuran | 410001 |
+|        2 | Khurana  | Karan     | Bandra  | Mumbai |  9856244512 | Karankhuran    | 410001 |
++----------+----------+-----------+---------+--------+-------------+----------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address  | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+|        1 | Pawar    | Shubham   | Akluj    | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
+|        1 | Mujawar  | Samarth   | Nandre   | Nandre  |  7775827779 | nilofarm9           | 431202 |
+|        2 | Khurana  | Ayushman  | Bandra   | Mumbai  |  9856244512 | ayushmankhuran      | 410001 |
+|        1 | Pawar    | Vishal    | Badnapur | Jalna   |  7775827779 | vishal19            | 431202 |
+|        2 | Khurana  | Karan     | Bandra   | Mumbai  |  9856244512 | Karankhuran         | 410001 |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+5 rows in set (0.00 sec)
+
+**************************************************************************************************
+UC9 : Ability to identify each Address Book with name and Type.
+**************************************************************************************************
+
 
