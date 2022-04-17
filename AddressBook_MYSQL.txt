@@ -82,4 +82,19 @@ mysql> SELECT * FROM Persons;
 +----------+----------+-----------+-----------+---------+-------------+---------------------+--------+
 2 rows in set (0.01 sec)
 
+/*********************************************************************************************
+UC4 : Ability to edit existing contact person
+*********************************************************************************************/
 
+mysql> update Persons set Address = 'Akluj' WHERE Address = 'Kurduwadi';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+---------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+---------+---------+-------------+---------------------+--------+
+|        1 | Pawar    | Shubham   | Akluj   | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
+|        2 | Khurana  | Ayushman  | Bandra  | Mumbai  |  9856244512 | ayushmankhuran      | 410001 |
++----------+----------+-----------+---------+---------+-------------+---------------------+--------+
+2 rows in set (0.01 sec)
