@@ -572,3 +572,22 @@ mysql> SELECT * FROM Emp_Department;
 UC 12 :
 **************************************************************************************
 
+mysql> SELECT * FROM Emp_Department WHERE empID = 1;
++-------+-----------+
+| empID | Depart    |
++-------+-----------+
+|     1 | Marketing |
+|     1 | Sales     |
++-------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Department WHERE department = 1;
+Empty set, 2 warnings (0.01 sec)
+
+mysql> SELECT * FROM Department WHERE department = 'sales';
++------------+
+| department |
++------------+
+| Sales      |
++------------+
+1 row in set (0.00 sec)
