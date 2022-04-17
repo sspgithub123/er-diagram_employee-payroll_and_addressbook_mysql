@@ -65,3 +65,21 @@ mysql> DESCRIBE Persons;
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.01 sec)
 
+*************************************************************************
+UC3 : Ability to insert new Contacts to Address Book
+*************************************************************************
+
+mysql> INSERT INTO Persons ( PersonID, LastName, FirstName, Address, City,PhoneNumber, email, zip) VALUES (1, 'Pawar', 'Shubham', 'Kurduwadi', 'Solapur',8530705596, 'ssp671995@gmail.com', 413252),(2, 'Khurana', 'Ayushman', 'Bandra', 'Mumbai', 9856244512, 'ayushmankhuran', 410001);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+-----------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address   | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+-----------+---------+-------------+---------------------+--------+
+|        1 | Pawar    | Shubham   | Kurduwadi | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
+|        2 | Khurana  | Ayushman  | Bandra    | Mumbai  |  9856244512 | ayushmankhuran      | 410001 |
++----------+----------+-----------+-----------+---------+-------------+---------------------+--------+
+2 rows in set (0.01 sec)
+
+
