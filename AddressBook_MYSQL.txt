@@ -113,3 +113,21 @@ mysql> SELECT * FROM Persons;
 |        1 | Pawar    | Shubham   | Akluj   | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
 +----------+----------+-----------+---------+---------+-------------+---------------------+--------+
 1 row in set (0.00 sec)
+
+/*********************************************************************************************
+UC6 : Ability to Retrieve Person belonging to a City or State from the Address Book
+*********************************************************************************************/
+
+mysql> SELECT * FROM Persons WHERE City = 'Solapur';
++----------+----------+-----------+---------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+---------+---------+-------------+---------------------+--------+
+|        1 | Pawar    | Shubham   | Akluj   | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
++----------+----------+-----------+---------+---------+-------------+---------------------+--------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO Persons ( PersonID, LastName, FirstName, Address, City, PhoneNumber, email, zip)VALUES (1, 'Mujawar', 'Nilofar', 'Nandre', 'Nandre',7775827779, 'nilofarm9', 431202),(2, 'Khurana','Ayushman', 'Bandra', 'Mumbai', 9856244512, 'ayushmankhuran', 410001);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+
