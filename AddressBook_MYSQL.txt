@@ -130,4 +130,48 @@ mysql> INSERT INTO Persons ( PersonID, LastName, FirstName, Address, City, Phone
 Query OK, 2 rows affected (0.01 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 
+/*********************************************************************************************
+UC7 : Ability to understand the size of address book by City and State
+*********************************************************************************************/
+
+mysql> SELECT COUNT(City) FROM Persons;
++-------------+
+| COUNT(City) |
++-------------+
+|           3 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO Persons ( PersonID, LastName, FirstName, Address, City, PhoneNumber, email, zip) VALUES (1, 'Pawar', 'Vishal', 'Badnapur', 'Jalna',7775827779, 'vishal19', 431202),(2, 'Khurana','Karan', 'Bandra', 'Mumbai', 9856244512, 'Karankhuran', 410001);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address  | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+|        1 | Pawar    | Shubham   | Akluj    | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
+|        1 | Mujawar  | Nilofar   | Nandre   | Nandre  |  7775827779 | nilofarm9           | 431202 |
+|        2 | Khurana  | Ayushman  | Bandra   | Mumbai  |  9856244512 | ayushmankhuran      | 410001 |
+|        1 | Pawar    | Vishal    | Badnapur | Jalna   |  7775827779 | vishal19            | 431202 |
+|        2 | Khurana  | Karan     | Bandra   | Mumbai  |  9856244512 | Karankhuran         | 410001 |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+5 rows in set (0.01 sec)
+
+mysql> update Persons set FirstName = 'Samarth' WHERE LastName = 'Mujawar';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM Persons;
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+| PersonID | LastName | FirstName | Address  | City    | PhoneNumber | email               | zip    |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+|        1 | Pawar    | Shubham   | Akluj    | Solapur |  8530705596 | ssp671995@gmail.com | 413252 |
+|        1 | Mujawar  | Samarth   | Nandre   | Nandre  |  7775827779 | nilofarm9           | 431202 |
+|        2 | Khurana  | Ayushman  | Bandra   | Mumbai  |  9856244512 | ayushmankhuran      | 410001 |
+|        1 | Pawar    | Vishal    | Badnapur | Jalna   |  7775827779 | vishal19            | 431202 |
+|        2 | Khurana  | Karan     | Bandra   | Mumbai  |  9856244512 | Karankhuran         | 410001 |
++----------+----------+-----------+----------+---------+-------------+---------------------+--------+
+5 rows in set (0.01 sec)
+
 
